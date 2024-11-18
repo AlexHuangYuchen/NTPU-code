@@ -1,0 +1,6 @@
+#include<stdio.h>
+int main(){
+    int c,e,m,s;
+    scanf("%d%d%d%d",&c,&e,&m,&s);
+    printf("%d",(c+e+m+s)/4);
+}
