@@ -1,0 +1,6 @@
+#include<stdio.h>
+int main(){
+    int ud,dd,k;
+    scanf("%d%d%d",&ud,&dd,&k);
+    printf("%d",((ud+dd)*k)/2);
+}
