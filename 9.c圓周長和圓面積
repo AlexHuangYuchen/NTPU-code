@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+    int a;
+    scanf("%d", &a);
+
+    // 計算周長，不進位
+    printf("%.0lf\n", (double)(2 * a * 3.14 - 0.5));
+
+    // 計算面積，不進位
+    printf("%.0lf\n", (double)(a * a * 3.14 - 0.5));
+
+    return 0;
+}
