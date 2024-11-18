@@ -1,0 +1,14 @@
+#define _GNU_SOURCE
+#include <math.h>
+#include<stdio.h>
+int main(){
+    int r;
+    scanf("%d",&r);
+    double a,b;
+    a=2*r*M_PI;
+    b=r*r*M_PI;
+    printf("pi=%.5f\n",M_PI);
+    printf("radius=%d\n",r);
+    printf("circumference=%.5f\n",a);
+    printf("area=%.5f",b);
+}
