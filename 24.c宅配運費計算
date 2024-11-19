@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main(){
+    int w,d;
+    scanf("%d%d",&w,&d);
+    int sum=0;
+    if(w<5){
+        if(d<10){
+            sum+=0;
+        }
+        else if(d>10){
+            sum+=d*10;
+        }
+    }
+    else if(w>=5 && w<=10){
+        sum+=d*20;
+    }
+    else if(w>10 && w<=20){
+        sum+=d*40;
+    }
+    else{
+        printf("不收件");
+        return 0;
+    }
+    printf("%d",sum+100);
+}
