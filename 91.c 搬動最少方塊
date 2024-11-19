@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main(){
+    int n;
+    int sum;
+    int c=1;
+    int ave=0;
+    while(1){
+        scanf("%d",&n);
+        if(n==0){
+            return 0;
+        }
+        sum=0;
+        int a[n];
+        for(int i=0;i<n;i++){
+            scanf("%d",&a[i]);
+            ave+=a[i];
+        }
+        ave/=n;
+        //printf("%d\n",ave);
+        for(int j=0;j<n;j++){
+            a[j]-=ave;
+            if(a[j]>0){
+                sum+=a[j];
+            }
+        }
+        printf("Set #%d\n",c);
+        printf("The minimum number of moves is %d.\n",sum);
+        c++;
+        printf("\n");
+        ave=0;
+    }
+}
