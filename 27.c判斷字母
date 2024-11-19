@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main(){
+    char s,l;
+    scanf("%c%c",&s,&l); //a 97 A 65 z 122 Z 90
+    int box=l;
+    if(box==97 || box==65){
+        printf("the first.");
+    }
+    else if(box==122 || box==90){
+        printf("the last.");
+    }
+    else if((box>90 && box<97) || box<65 || box>122){
+        printf("not English.");
+    }
+    else{
+        if(box>=97 && box<=122){
+            printf("%c%c",box-1-32,box+1-32);
+        }
+        else if(box>=65 && box<=90){
+            printf("%c%c",box-1,box+1);
+        }
+    }
+}
