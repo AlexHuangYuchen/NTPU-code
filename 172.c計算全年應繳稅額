@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main(){
+    int m;
+    scanf("%d",&m);
+    double sum=0;
+    if(m<=560000){
+        sum+=m*0.05;
+    }
+    else if(m>560000 && m<=1260000){
+        sum+=m*0.12-39200;
+    }
+    else if(m>1260000 &&m<=2520000){
+        sum+=m*0.2-140000;
+    }
+    else if(m>2520000 && m<=4720000){
+        sum+=m*0.3-392000;
+    }
+    else if(m>4720000){
+        sum+=m*0.4-864000;
+    }
+    printf("全年應繳稅額為： %.0lf 元",sum);
+}
