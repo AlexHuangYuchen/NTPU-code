@@ -1,0 +1,36 @@
+#include<stdio.h>
+int main(){
+    int A[4][4];
+    int cont;
+    for(int i=0;i<4;i++){
+        for(int j=0;j<4;j++){
+            scanf("%d",&A[i][j]);
+        }
+    }
+    ///////
+    for(int i=0;i<4;i++){
+        for(int j=0;j<4;j++){
+            if(A[i][j]==0){
+               // printf("i=%d j=%d\n",i,j);
+                cont=0;
+                for(int k=i-1;k<=i+1;k++){///數周圍有幾個-1
+                    for(int p=j-1;p<=j+1;p++){
+                        if(k>=0 && k<=3 && p>=0 && p<=3 && ((k!=i)||(p!=j)) && A[k][p]==-1){
+                            //printf("k=%d p=%d\n",k,p);
+                            cont++;
+                        }
+                    }
+                }///
+                A[i][j]=cont;
+            }
+            if(j==3){
+                printf("%d",A[i][j]);
+            }
+            else{
+                printf("%d ",A[i][j]);
+            }
+        }
+        printf("\n");
+    }
+
+}
