@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main(){
+    int h;
+    scanf("%d",&h);
+    int a=0,b=0,c=0;
+    if(h>60){
+        a=60;
+        if(h>75){
+            b=15;
+            c=h-75;
+        }
+        else{
+            b=h-60;
+        }
+    }
+    else{
+        a=h;
+    }
+    int sum=a*100+b*100*1.25+c*100*1.75;
+    printf("%d",sum);
+}
