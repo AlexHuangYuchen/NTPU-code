@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main(){
+    int k;
+    scanf("%d",&k);
+    int sum=0;
+    if(k<=20){
+        sum+=k*5;
+    }
+    else if(k>20){
+        sum+=20*5;
+        sum+=(k-20)*8;
+        if(k>100){
+            sum*=0.9;
+        }
+    }
+    printf("%d",sum);
+}
