@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main()
+{
+   double h,w;
+   scanf("%lf%lf",&h,&w);
+   h/=100.;
+   double bmi=w/(h*h);
+   printf("%.2lf",bmi);
+}
