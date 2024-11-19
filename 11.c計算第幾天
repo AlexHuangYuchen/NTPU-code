@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<stdbool.h>
+int main(){
+    int y,m,d;
+    int sum=0;
+    bool change=1;
+    bool whatyear=0;
+    scanf("%d%d%d",&y,&m,&d);
+    if(y%400==0 || (y%4==0 && y%100!=0)){
+        whatyear=1;
+    }
+    for(int i=1;i<=m-1;i++){
+        if(change==1){
+            sum+=31;
+            if(i==7){
+                change=1;
+            }
+            else{
+                 change=0;
+            }
+        }
+        else if(change==0){
+            if(whatyear==1 && i==2){
+                sum+=29;
+            }
+            else if(whatyear==0&& i==2){
+                sum+=28;
+            }
+            else{
+                  sum+=30;
+            }
+            change=1;
+        }
+    }
+    sum+=d;
+    printf("%d",sum);
+}
