@@ -1,0 +1,11 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+    double  n;
+    double p;
+    scanf("%lf%lf",&n,&p);
+    //printf("%lf\n",n);
+    //printf("%lf\n",1/n);
+    printf("%.0lf",pow(p,(double)1/n));
+
+}
