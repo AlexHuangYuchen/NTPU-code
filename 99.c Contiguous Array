@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<stdio.h>
+int main(){
+    int n;
+    scanf("%d",&n);
+    int A[n];
+    for(int i=0;i<n;i++){
+        scanf("%d",&A[i]);
+    }
+    int times=1;
+    int record[n],r=-1;
+    memset(record,0,sizeof(record));
+    int one,zero;
+    for(int i=n-1;i>=0;i--){
+        for(int j=0;j<=i;j++){
+            one=0;
+            zero=0;
+            for(int k=0;k<times;k++){
+                    if(A[j+k]==1){
+                        one++;
+                    }
+                    else if(A[j+k]==0){
+                        zero++;
+                    }
+            }
+            if(one==zero){
+                r++;
+                record[r]=times;
+                break;
+            }
+        }
+        times++;
+    }
+    int max=-1;
+    for(int i=0;i<n;i++){
+        if(record[i]>max){
+            max=record[i];
+        }
+    }
+    printf("%d",max);
+}
