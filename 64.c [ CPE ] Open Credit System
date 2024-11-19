@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main(){
+    int n;
+    scanf("%d",&n);
+    int t;
+    int max;
+    for(int i=0;i<n;i++){
+        scanf("%d",&t);
+        int A[t];
+        for(int j=0;j<t;j++){
+            scanf("%d",&A[j]);
+        }
+        max=-150000;
+        for(int k=0;k<t-1;k++){
+            for(int p=k+1;p<t;p++){
+                if(A[k]-A[p]>max){
+                    max=A[k]-A[p];
+                }
+            }
+        }
+        printf("%d\n",max);
+    }
+}
