@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+    int s,n,i;
+    double p;
+    scanf("%d",&s);
+    double up,down,ans;
+    for(int j=0;j<s;j++){
+        //printf("第%d次\n",i+1);
+        scanf("%d%lf%d",&n,&p,&i);
+        up=pow((1-p),(i-1))*p;
+        down=1-(pow(1-p,n));
+        ans=up/down;
+        printf("%.4lf\n",ans);
+    }
+}
