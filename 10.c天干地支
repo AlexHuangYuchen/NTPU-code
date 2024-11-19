@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main(){
+    int n;
+    scanf("%d",&n);
+    const char *str1[]={"甲","乙","丙","丁","戊","己","庚","辛","壬","癸"};
+    const char *str2[]={"子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥"};
+    printf("%s",str1[n%10]);
+    printf("%s",str2[n%12]);
+}
