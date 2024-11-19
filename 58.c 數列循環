@@ -1,0 +1,36 @@
+#include<stdio.h>
+int main(){
+    int a;
+    scanf("%d",&a);
+    int max=-1;
+    int k,q;
+    int mem;
+    int w2;
+    for(int i=0;i<a;i++){
+        scanf("%d",&k);
+        scanf("%d",&q);
+        max=-1;
+        for(int j=k;j<=q;j++){
+                w2=0;
+                mem=j;
+                while(1){
+                        if(mem==1){
+                            break;
+                        }
+
+                        if(mem%2==0){
+                            mem/=2;
+                            w2++;
+                        }
+                        else if(mem%2==1){
+                            mem=(mem*3)+1;
+                            w2++;
+                        }
+                }
+                if(w2>max){
+                    max=w2;
+                }
+        }
+        printf("%d\n",max+1);
+    }
+}
