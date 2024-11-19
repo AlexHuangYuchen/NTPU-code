@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main(){
+    int a,b,c,d;
+    scanf("%d%d%d%d",&a,&b,&c,&d);
+    int now=b;
+    int day=1;
+    while(1){
+           now+=c;
+           if(now<a){
+                now-=d;
+                day++;
+           }
+           else{
+                break;
+           }
+    }
+    printf("%d",day);
+}
