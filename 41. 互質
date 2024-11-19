@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main(){
+    int a,b;
+    int c;
+    scanf("%d%d",&a,&b);
+    c=a%b;
+    while(c!=0){
+        a=b;
+        b=c;
+        c=a%b;
+    }
+    if(b==1){
+        printf("兩數互質");
+    }
+    else{
+        printf("兩數不互質");
+    }
+}
