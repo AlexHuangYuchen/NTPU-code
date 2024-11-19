@@ -1,0 +1,27 @@
+int main(){
+    char o;//運算元
+    int num;//移動量
+    char letter;//字母
+    scanf("%c%d%c",&o,&num,&letter);
+    int sum=letter;
+
+    switch (o){
+        case '+':
+            if(sum+num>90){
+                printf("%c",64+(sum+num)-90);
+            }
+            else{
+                printf("%c",sum+num);
+            }
+            break;
+        case '-':
+            if(sum-num<65){
+                printf("%c",(sum-num)-65+91);
+            }
+            else{
+                printf("%c",sum-num);
+            }
+             break;
+    }
+
+}
