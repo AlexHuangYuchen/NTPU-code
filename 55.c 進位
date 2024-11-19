@@ -1,0 +1,48 @@
+#include<stdio.h>
+int main(){
+    int n1;
+    int n2;
+    //scanf("%s",&n1);
+    //printf("%d\n",n1[2]-48);
+    //printf("%d",strlen(n1));
+    int cont=0,gin=0;
+    int m1,m2;
+    while(1){
+        scanf("%d",&n1);
+        scanf("%d",&n2);
+        if(n1==0 && n2==0){
+            break;
+        }
+        else {
+            while(n1>0 && n2>0 || gin==1){
+                    //printf("%d %d\n",n1,n2);
+                    m1=n1%10;
+                    m2=n2%10;
+                  //  printf("%d %d\n",m1,m2);
+                    n1/=10;
+                    n2/=10;
+                    if((m1+m2+gin)>=10){
+                        cont++;
+                        gin=1;
+                    }
+                    else{
+                        gin =0;
+                    }
+                   // printf("cont=%d\n",cont);
+                   // printf("gin=%d\n",gin);
+            }
+            if(cont==0){
+                printf("No carry operation.\n");
+            }
+            else{
+                if(cont==1){
+                    printf("%d carry operation.\n",cont);
+                }
+                else{
+                    printf("%d carry operations.\n",cont);
+                }
+            }
+            cont=0;
+        }
+    }
+}
