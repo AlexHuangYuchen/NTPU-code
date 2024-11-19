@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<stdbool.h>
+int main(){
+    int n;
+    int odd=0;
+    int even=0;
+    bool turn=1;
+    scanf("%d",&n);
+    while(n!=0){
+        if(turn==1){
+            odd+=n%10;
+            n/=10;
+            turn=0;
+        }
+        else if(turn==0){
+            even+=n%10;
+            n/=10;
+            turn=1;
+        }
+    }
+    printf("%d",abs(odd-even));
+}
