@@ -1,0 +1,55 @@
+#include<stdio.h>
+int main(){
+    int a,b,c;
+    scanf("%d%d%d",&a,&b,&c);
+    int ban[3];
+    int max=-1;
+    ban[0]=a;
+    ban[1]=b;
+    ban[2]=c;
+    int index;
+    for(int i=0;i<3;i++){
+        if(ban[i]>max){
+            max=ban[i];
+            index=i;
+        }
+    }
+    int temp;
+    temp=ban[2];
+    ban[2]=ban[index];
+    ban[index]=temp;
+    if(ban[1]<ban[0]){
+        temp=ban[1];
+        ban[1]=ban[0];
+        ban[0]=temp;
+    }
+    if(ban[0]+ban[1]<=ban[2]){
+        printf("not a triangle");
+    }
+    else if((ban[0]*ban[0])+(ban[1]*ban[1])==(ban[2]*ban[2])){
+        printf("rectangular triangle");
+    }
+    else{
+        if(ban[0]==ban[1] || ban[1]==ban[2]){
+            if(ban[1]==ban[2] && ban[0]==ban[2]){
+                printf("regular triangle");
+            }
+            else{
+                if((ban[0]*ban[0])+(ban[1]*ban[1])<(ban[2]*ban[2]) || (ban[2]*ban[2])+(ban[1]*ban[1])<(ban[0]*ban[0])){
+                    printf("isosceles obtuse triangle");
+                }
+                else{
+                    printf("isosceles acute triangle");
+                }
+            }
+        }
+        else if (ban[0]!=ban[1] && ban[1]!=ban[2]){
+            if((ban[0]*ban[0])+(ban[1]*ban[1])<(ban[2]*ban[2])){
+                    printf("obtuse triangle");
+            }
+            else{
+                    printf("acute triangle");
+            }
+        }
+    }
+}
