@@ -1,0 +1,60 @@
+#include<stdio.h>
+#include<stdbool.h>
+int main(){
+    int a,b;
+    scanf("%d%d",&a,&b);
+    int n[a][b];
+    for(int i=0;i<a;i++){
+        for(int j=0;j<b;j++){
+            scanf("%d",&n[i][j]);
+        }
+    }
+    int sum_can=0,sum_cant=0;
+   // printf("%d",n[3][0]);
+    bool done=0;
+    int cont=0;
+    for(int i=0;i<a;i++){
+        for(int j=0;j<b;j++){
+            if(n[i][j]==1){
+                //printf("找到炸彈%d %d\n",i,j);
+               // printf("開始搜尋周圍偵測器\n");
+                //printf("%d %d %d %d\n",i-1,i+1,j-1,j+1);
+                for(int k=i-1;k<=i+1;k++){
+                    for(int q=j-1;q<=j+1;q++){
+                        //printf("%d\n",n[k][q]);
+                        if(k>=0&& k<=a-1&& q>=0&&q<=b-1 &&n[k][q]==5){
+                           // printf("偵測器%d %d\n",k,q);
+                            cont=0;
+                            for(int r=k-1;r<=k+1;r++){
+                                for(int t=q-1;t<=q+1;t++){
+                                   // printf("r=%d t=%d n[r][t]=%d\n",r,t,n[r][t]);
+                                    if(r>=0&& r<=a-1&& t>=0&&t<=b-1 &&(r != k || t != q)&&n[r][t]==5){//偵測器周圍有偵測器
+                                       // printf("偵測器周圍有偵測器%d %d\n",r,t);
+                                        cont++;
+                                    }
+                                }
+                            }
+                            if(cont==0){//偵測器周圍沒有偵測器
+                                done=1;
+                                sum_can++;
+                                break;
+                            }
+                            else if(cont>0){
+                                done=0;
+                            }
+                        }
+                    }
+                    if(done==1){
+                        break;
+                    }
+                }
+                if(done==0){
+                    sum_cant++;
+                }
+                //printf("繼續搜尋下一個炸彈\n");
+                done=0;
+            }
+        }
+    }
+    printf("%d %d",sum_can,sum_cant);
+}
