@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main(){
+    int m,e;
+    int cost=0;
+    scanf("%d%d",&m,&e);
+    if(m>=6 && m<=9){
+        if(e>120){
+            cost+=e*(5+2);
+        }
+        else{
+            cost+=e*5;
+        }
+    }
+    else{
+        if(e>120){
+            cost+=e*(3+2);
+        }
+        else{
+            cost+=e*3;
+        }
+    }
+    printf("%d",cost);
+}
