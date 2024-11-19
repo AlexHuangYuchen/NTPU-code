@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main(){
+    int n1,n2;
+    scanf("%d",&n1);
+    int sum;
+    for(int i=0;i<n1;i++){
+        scanf("%d",&n2);
+        int A[n2];
+        for(int j=0;j<n2;j++){
+            scanf("%d",&A[j]);
+        }
+        sum=0;
+        for(int k=1;k<=n2-1;k++){
+            for(int p=0;p<k;p++){
+                if(A[p]<=A[k]){
+                    sum++;
+                }
+            }
+        }
+        printf("%d\n",sum);
+    }
+}
