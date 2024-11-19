@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main(){
+    int ans;
+    int a,b,c;
+    scanf("%d%d%d",&a,&b,&c);
+    ans=a+b;
+    if(ans==(c)){
+        printf("true");
+    }
+    else{
+        printf("false");
+    }
+}
