@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdbool.h>
+int main(){
+    int m,n,ansn;
+    scanf("%d",&m);
+    for(int j=0;j<m;j++){
+        scanf("%d",&n);
+        ansn=n;
+        int n2=n;
+        bool prime=1,emirp=1;
+        int cont=0;
+
+        for(int i=2;i<n;i++){
+            if(n%i==0){
+                prime=0;
+                printf("%d is not prime.\n",ansn);
+                break;
+            }
+        }
+
+        int ten=1;
+        while(n2!=0){
+            n2/=10;
+            cont++;//算數字長度
+            ten*=10;
+        }
+        ten/=10;
+        int n_switch=0;
+        for(int i=0;i<cont;i++){
+            n_switch+=(n%10)*ten;
+            n/=10;
+            ten/=10;
+        }
+        for(int i=2;i<n_switch;i++){
+            if((n_switch%i==0 && prime==1 )||(n_switch==ansn && prime==1 )){
+                emirp=0;
+                printf("%d is prime.\n",ansn);
+                break;
+            }
+        }
+        if(prime==1 && emirp==1 &&(n_switch!=ansn)){
+            printf("%d is emirp.\n",ansn);
+        }
+    }
+
+}
