@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+  char n[5];
+  scanf("%s",n);
+  int a[2][4];
+  memset(a,0,sizeof(a));
+  int rem;
+  /*
+  for(int j=0;j<4;j++){
+          printf("%c\n",n[j]);
+  }
+  */
+  int cont=0,c=0;
+  for(int i=0;i<4;i++){
+      if(n[i]-48!=0){
+         rem=n[i]-48; 
+      }
+      //printf("rem=%d\n",rem);
+      cont=0;
+      for(int j=0;j<4;j++){
+          //printf("%d\n",n[j]-48);
+          if(n[j]-48==rem){
+              n[j]='0';
+              cont++;
+          }
+      }
+      /*
+      for(int k=0;k<4;k++){
+          printf("%c",n[k]);
+      }
+      printf("\n");
+      */
+      a[0][c]=rem;
+      a[1][c]=cont;
+      c++;
+  }
+  for(int i=0;i<4;i++){
+      if(a[1][i]!=0){
+          printf("%d%d",a[1][i],a[0][i]);
+      }
+  }
+}
