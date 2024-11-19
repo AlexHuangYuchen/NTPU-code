@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main(){
+    int d;
+    scanf("%d",&d);
+    int sum=80;
+    if(d>1500){
+        sum+=5*((d-1500)/500);
+        if((d-1500)%500>0){
+            sum+=5;
+        }
+    }
+    printf("%d",sum);
+}
